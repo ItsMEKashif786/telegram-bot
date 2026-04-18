@@ -1,0 +1,17 @@
+[Unit]
+Description=Telegram Bot for Dawateislami India
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/telegram_bot
+ExecStart=/usr/bin/python3 /home/ubuntu/telegram_bot/bot.py
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=telegram-bot
+
+[Install]
+WantedBy=multi-user.target
